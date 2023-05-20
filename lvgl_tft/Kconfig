@@ -124,6 +124,11 @@ menu "LVGL TFT Display controller"
         help
             ST7735S display controller.
 
+    config LV_TFT_DISPLAY_CONTROLLER_ST7735
+        bool
+        help
+            ST7735 display controller.
+
     config LV_TFT_DISPLAY_CONTROLLER_HX8357
         bool
         help
@@ -299,9 +304,13 @@ menu "LVGL TFT Display controller"
         bool "GC9A01"
             select LV_TFT_DISPLAY_CONTROLLER_GC9A01
             select LV_TFT_DISPLAY_PROTOCOL_SPI
-        config LV_TFT_DISPLAY_USER_CONTROLLER_ST7735S
+    config LV_TFT_DISPLAY_USER_CONTROLLER_ST7735S
             bool "ST7735S"
             select LV_TFT_DISPLAY_CONTROLLER_ST7735S
+            select LV_TFT_DISPLAY_PROTOCOL_SPI
+    config LV_TFT_DISPLAY_USER_CONTROLLER_ST7735
+            bool "ST7735"
+            select LV_TFT_DISPLAY_CONTROLLER_ST7735
             select LV_TFT_DISPLAY_PROTOCOL_SPI
     config LV_TFT_DISPLAY_USER_CONTROLLER_HX8357
         bool "HX8357"

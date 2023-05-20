@@ -23,6 +23,8 @@ extern "C" {
  *      DEFINES
  *********************/
 
+# define SPI_HOST_MAX 3
+
 /* DISP_BUF_SIZE value doesn't have an special meaning, but it's the size
  * of the buffer(s) passed to LVGL as display buffers. The default values used
  * were the values working for the contributor of the display controller.
@@ -40,6 +42,8 @@ extern "C" {
 #if defined (CONFIG_LV_TFT_DISPLAY_CONTROLLER_ST7789)
 #define DISP_BUF_SIZE  (LV_HOR_RES_MAX * 40)
 #elif defined CONFIG_LV_TFT_DISPLAY_CONTROLLER_ST7735S
+#define DISP_BUF_SIZE  (LV_HOR_RES_MAX * 40)
+#elif defined CONFIG_LV_TFT_DISPLAY_CONTROLLER_ST7735
 #define DISP_BUF_SIZE  (LV_HOR_RES_MAX * 40)
 #elif defined CONFIG_LV_TFT_DISPLAY_CONTROLLER_ST7796S
 #define DISP_BUF_SIZE  (LV_HOR_RES_MAX * 40)
